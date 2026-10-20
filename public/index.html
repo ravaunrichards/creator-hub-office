@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172554"><meta name="description" content="Creator Hub Office — documents, spreadsheets, presentations and files in one workspace.">
+  <title>Creator Hub Office</title><link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#home" aria-label="Creator Hub Office home"><span class="brand-mark">CH</span><span><strong>Creator Hub</strong><small>OFFICE</small></span></a>
+      <button class="new-button" id="newDoc">＋ Create new</button>
+      <nav class="nav" aria-label="Main navigation">
+        <button class="nav-item active" data-view="home"><span>⌂</span> Home</button>
+        <button class="nav-item" data-view="writer"><span>▤</span> Writer <i>DOC</i></button>
+        <button class="nav-item" data-view="sheets"><span>▦</span> Sheets <i>XLS</i></button>
+        <button class="nav-item" data-view="slides"><span>▧</span> Slides <i>PPT</i></button>
+        <button class="nav-item" data-view="drive"><span>▱</span> Drive <i>FILES</i></button>
+      </nav>
+      <div class="sidebar-bottom"><div class="storage-icon">◈</div><div><strong>Personal workspace</strong><small>Saved on this device</small></div></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><button class="mobile-menu" id="mobileMenu" aria-label="Toggle menu">☰</button><div class="breadcrumbs" id="breadcrumbs">Workspace <span>/</span> Home</div><div class="top-actions"><span class="local-pill"><b></b> Local mode</span><button class="avatar" title="Profile settings">C</button></div></header>
+      <section class="view active" id="view-home">
+        <div class="welcome"><div><p class="eyebrow">YOUR WORKSPACE</p><h1>Good work starts here.</h1><p class="muted">Create documents, organize ideas, and keep your work moving.</p></div><div class="welcome-art" aria-hidden="true"><span class="art-sheet">▤</span><span class="art-slide">▧</span><span class="art-grid">▦</span></div></div>
+        <div class="section-head"><div><h2>Create something new</h2><p class="muted">Pick a tool to get started.</p></div></div>
+        <div class="product-grid">
+          <button class="product-card writer-card" data-view="writer"><span class="product-icon">▤</span><span class="product-copy"><strong>Writer</strong><small>Documents, notes and drafts</small></span><span class="arrow">↗</span></button>
+          <button class="product-card sheets-card" data-view="sheets"><span class="product-icon">▦</span><span class="product-copy"><strong>Sheets</strong><small>Tables, calculations and lists</small></span><span class="arrow">↗</span></button>
+          <button class="product-card slides-card" data-view="slides"><span class="product-icon">▧</span><span class="product-copy"><strong>Slides</strong><small>Presentations and storyboards</small></span><span class="arrow">↗</span></button>
+          <button class="product-card drive-card" data-view="drive"><span class="product-icon">▱</span><span class="product-copy"><strong>Drive</strong><small>Your files in one place</small></span><span class="arrow">↗</span></button>
+        </div>
+        <div class="section-head recent-head"><div><h2>Recent work</h2><p class="muted">Your locally saved Creator Hub Office files.</p></div><button class="text-button" data-view="drive">Open Drive →</button></div>
+        <div class="recent-list" id="recentList"><div class="empty-state"><span>▤</span><strong>No files yet</strong><p>Create a document, sheet, or presentation to see it here.</p></div></div>
+        <div class="notice"><span>ⓘ</span><p><strong>Early access workspace.</strong> Your work is saved in this browser on this device. Cloud sync, user accounts, and full Microsoft Office format compatibility are not included in this starter release.</p></div>
+      </section>
+      <section class="view" id="view-writer">
+        <div class="editor-toolbar"><div class="doc-title-wrap"><span class="tool-square writer-bg">▤</span><input id="writerName" class="file-name" value="Untitled document" aria-label="Document name"><span class="save-status" id="writerStatus">Saved locally</span></div><div class="toolbar-actions"><button class="outline-button" id="writerDownload">↓ Export HTML</button><button class="primary-button" id="writerSave">Save</button></div></div>
+        <div class="format-toolbar"><button data-command="bold" title="Bold"><b>B</b></button><button data-command="italic" title="Italic"><i>I</i></button><button data-command="underline" title="Underline"><u>U</u></button><span class="toolbar-divider"></span><select id="writerBlock" aria-label="Text style"><option value="p">Normal text</option><option value="h1">Heading 1</option><option value="h2">Heading 2</option><option value="h3">Heading 3</option></select><select id="writerSize" aria-label="Font size"><option value="3">12 pt</option><option value="4">14 pt</option><option value="5">18 pt</option><option value="6">24 pt</option></select><span class="toolbar-divider"></span><button data-command="insertUnorderedList" title="Bulleted list">• List</button><button data-command="insertOrderedList" title="Numbered list">1. List</button></div>
+        <div class="paper-wrap"><article id="writerCanvas" class="paper" contenteditable="true" spellcheck="true" aria-label="Document editor"><h1>Untitled document</h1><p>Start writing here…</p></article></div>
+      </section>
+      <section class="view" id="view-sheets">
+        <div class="editor-toolbar"><div class="doc-title-wrap"><span class="tool-square sheets-bg">▦</span><input id="sheetName" class="file-name" value="Untitled spreadsheet" aria-label="Spreadsheet name"><span class="save-status" id="sheetStatus">Saved locally</span></div><div class="toolbar-actions"><button class="outline-button" id="addRow">＋ Row</button><button class="outline-button" id="sheetDownload">↓ Export CSV</button><button class="primary-button" id="sheetSave">Save</button></div></div>
+        <div class="formula-bar"><span id="activeCell">A1</span><span class="fx">fx</span><input id="cellValue" placeholder="Select a cell to view or edit its value" aria-label="Cell value"></div>
+        <div class="sheet-wrap"><table class="spreadsheet" id="spreadsheet" aria-label="Spreadsheet grid"></table></div><p class="editor-hint">Tip: Select a cell and edit its value in the formula bar. Basic arithmetic formulas beginning with = are supported.</p>
+      </section>
+      <section class="view" id="view-slides">
+        <div class="editor-toolbar"><div class="doc-title-wrap"><span class="tool-square slides-bg">▧</span><input id="slidesName" class="file-name" value="Untitled presentation" aria-label="Presentation name"><span class="save-status" id="slidesStatus">Saved locally</span></div><div class="toolbar-actions"><button class="outline-button" id="addSlide">＋ Add slide</button><button class="outline-button" id="slidesDownload">↓ Export JSON</button><button class="primary-button" id="slidesSave">Save</button></div></div>
+        <div class="slides-layout"><div class="slide-list" id="slideList"></div><div class="slide-stage"><div class="slide-canvas" id="slideCanvas"><input id="slideHeading" class="slide-heading" value="Your big idea starts here" aria-label="Slide heading"><textarea id="slideBody" class="slide-body" aria-label="Slide body">Add a few words to introduce your presentation.</textarea><div class="slide-brand">CREATOR HUB OFFICE</div></div><div class="slide-footer"><button class="outline-button" id="prevSlide">← Previous</button><span id="slideCount">Slide 1 of 1</span><button class="outline-button" id="nextSlide">Next →</button></div></div></div>
+      </section>
+      <section class="view" id="view-drive">
+        <div class="drive-header"><div><p class="eyebrow">FILE MANAGEMENT</p><h1>Your Drive</h1><p class="muted">Browse your workspace and import files from your device.</p></div><label class="primary-button upload-button">↑ Import files<input id="fileUpload" type="file" multiple hidden></label></div>
+        <div class="drive-tools"><div class="search-box">⌕ <input id="driveSearch" placeholder="Search files" aria-label="Search files"></div><span id="driveCount">0 files</span></div><div class="drive-grid" id="driveGrid"></div>
+        <div class="notice"><span>ⓘ</span><p>Imported files remain in this browser session unless downloaded or saved elsewhere. This starter does not upload your files to a cloud server.</p></div>
+      </section>
+      <footer class="footer"><span>© Creator Hub Office</span><span>Built for your workflow · Early access</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog id="createDialog" class="create-dialog"><div class="dialog-top"><div><h2>Create a file</h2><p class="muted">Choose what you want to work on.</p></div><button id="closeDialog" class="close-button" aria-label="Close">×</button></div><div class="dialog-options"><button data-create="writer"><span class="product-icon writer-bg">▤</span><strong>Document</strong><small>Writer</small></button><button data-create="sheets"><span class="product-icon sheets-bg">▦</span><strong>Spreadsheet</strong><small>Sheets</small></button><button data-create="slides"><span class="product-icon slides-bg">▧</span><strong>Presentation</strong><small>Slides</small></button></div></dialog>
+  <script src="/app.js" defer></script>
+</body></html>
